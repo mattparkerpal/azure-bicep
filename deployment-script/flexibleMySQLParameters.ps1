@@ -29,3 +29,5 @@ foreach ($hash in $parameterHash.GetEnumerator())
 {
   Update-AzMySqlFlexibleServerConfiguration -Name $($hash.Name) -ResourceGroupName $resourceGroupName -ServerName $serverName -Value $($hash.Value)
 }
+
+Restart-AzMySqlFlexibleServer -ResourceGroupName $resourceGroupName -Name $serverName
